@@ -1,0 +1,24 @@
+<div class="row">
+
+    <div class="col-12">
+        <h1 class="animated fadeIn fast">Buscando: <small>{{ termino}}</small></h1>
+        <hr>
+    </div>
+
+    <div class="col-12" *ngIf="heroes.length===0">
+        <div class="row">
+            <div class="col-6 m-auto">
+                <div class="alert alert-info">
+                    No existen resultados con el termino : {{ termino }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <app-heroe-tarjeta class="col-12 col-md-4" [heroe]="foo" [index]="foo.idx" *ngFor="let foo of heroes">
+        </app-heroe-tarjeta>
+    </div>
+
+
+</div>

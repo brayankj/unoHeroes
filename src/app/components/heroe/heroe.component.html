@@ -1,0 +1,26 @@
+<div class="row my-3">
+    <div class="col-12">
+        <h1>{{ heroe.nombre | uppercase }} <small>{{ heroe.aparicion | date:'y' }}</small> </h1>
+        <hr>
+    </div>
+    <div class="col-12">
+        <div class="row animated fadeIn">
+            <div class="col-md-4">
+                <img [src]="heroe.img" [alt]="heroe.nombre">
+            </div>
+            <div class="col-md-8">
+                <h3>{{ heroe.nombre }}</h3>
+                <button [routerLink]="['/heroes']" class="btn btn-outline-secondary">Regresar</button>
+                <hr>
+                <p>{{ heroe.bio }}</p>
+                <ng-container *ngIf="heroe.casa == 'DC'; else elseTemplate">
+                    <p>DC</p>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <p>Marvel</p>
+                </ng-template>
+
+            </div>
+        </div>
+    </div>
+</div>
